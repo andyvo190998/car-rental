@@ -47,9 +47,9 @@ const SearchManufacturer = ({
             afterLeave={() => setQuery('')}
           >
             <Combobox.Options>
-              {filteredManufacturer.map((item) => (
+              {filteredManufacturer.map((item, idx) => (
                 <Combobox.Option
-                  key={item}
+                  key={idx}
                   className={({ active }) =>
                     `relative search-manufacturer__option ${
                       active ? 'bg-primary-blue text-white' : 'text-gray-900'

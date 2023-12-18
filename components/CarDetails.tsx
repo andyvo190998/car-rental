@@ -53,6 +53,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                         src={generateCarImageUrl(car)}
                         alt="car model"
                         fill
+                        sizes="100vw"
                         priority
                         className="object-contain"
                       />
@@ -64,6 +65,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           src={generateCarImageUrl(car, '29')}
                           alt="car model"
                           fill
+                          sizes="100vw"
                           priority
                           className="object-contain"
                         />
@@ -74,6 +76,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           src={generateCarImageUrl(car, '33')}
                           alt="car model"
                           fill
+                          sizes="100vw"
                           priority
                           className="object-contain"
                         />
@@ -84,6 +87,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           src={generateCarImageUrl(car, '13')}
                           alt="car model"
                           fill
+                          sizes="100vw"
                           priority
                           className="object-contain"
                         />

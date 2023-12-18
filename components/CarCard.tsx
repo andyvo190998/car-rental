@@ -30,6 +30,7 @@ const CarCard = ({ car }: CarCardProps) => {
           src={generateCarImageUrl(car)}
           alt="car model"
           fill
+          sizes="100vw"
           className="object-contain"
         />
       </div>
