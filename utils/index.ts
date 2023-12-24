@@ -25,12 +25,10 @@ export async function fetchCars(filters: FIlterProps) {
 }
 
 export const generateCarImageUrl = (car: carProps, angle?: string) => {
-  const studioImageApi = process.env.DB_STUDIO_API;
-  const carCustomerKey = process.env.DB_CAR_KEY;
-  const url = new URL(studioImageApi ? studioImageApi : '');
+  const url = new URL('https://cdn.imagin.studio/getimage');
   const { make, model, year } = car;
 
-  url.searchParams.append('customer', carCustomerKey ? carCustomerKey : '');
+  url.searchParams.append('customer', 'hrjavascript-mastery');
   url.searchParams.append('make', make);
   url.searchParams.append('modelFamily', model.split(' ')[0]);
   url.searchParams.append('zoomType', 'fullscreen');
