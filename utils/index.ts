@@ -3,8 +3,12 @@ import { FIlterProps, carProps } from '@/types';
 export async function fetchCars(filters: FIlterProps) {
   const { manufacturer, year, model, limit, fuel } = filters;
   const headers = {
-    'X-RapidAPI-Key': '05844767e3msh2a829ba7d5778e3p12ff3cjsn374b65e680a2',
-    'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com',
+    'X-RapidAPI-Key': process.env.DB_RAPID_API_KEY
+      ? process.env.DB_RAPID_API_KEY
+      : '',
+    'X-RapidAPI-Host': process.env.DB_RAPID_API_HOST
+      ? process.env.DB_RAPID_API_HOST
+      : '',
   };
 
   const carApi = process.env.DB_CAR_API;
@@ -21,10 +25,12 @@ export async function fetchCars(filters: FIlterProps) {
 }
 
 export const generateCarImageUrl = (car: carProps, angle?: string) => {
-  const url = new URL('https://cdn.imagin.studio/getimage');
+  const studioImageApi = process.env.DB_STUDIO_API;
+  const carCustomerKey = process.env.DB_CAR_KEY;
+  const url = new URL(studioImageApi ? studioImageApi : '');
   const { make, model, year } = car;
 
-  url.searchParams.append('customer', 'hrjavascript-mastery');
+  url.searchParams.append('customer', carCustomerKey ? carCustomerKey : '');
   url.searchParams.append('make', make);
   url.searchParams.append('modelFamily', model.split(' ')[0]);
   url.searchParams.append('zoomType', 'fullscreen');

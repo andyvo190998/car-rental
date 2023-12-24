@@ -3,6 +3,7 @@ import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from '@/components';
 import { fetchCars } from '@/utils';
 import { fuels, yearsOfProduction } from '@/constants';
 
+// @ts-ignore:next-line
 export default async function Home({ searchParams }) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || '',

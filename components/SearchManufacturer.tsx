@@ -57,6 +57,7 @@ const SearchManufacturer = ({
                   }
                   value={item}
                 >
+                  {/* @ts-ignore:next-line */}
                   {(selected, active) => {
                     return (
                       <>
