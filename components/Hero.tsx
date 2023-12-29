@@ -1,9 +1,16 @@
 'use client';
 import Image from 'next/image';
 import { CustomButton } from './';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
+  const router = useRouter();
   const handleScroll = () => {};
+  useEffect(() => {
+    const newPathName = `${window.location.pathname}?manufacturer=volkswagen`;
+    router.push(newPathName);
+  }, []);
   return (
     <div className="hero">
       <div className="flex-1 pt-36 padding-x">

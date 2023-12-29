@@ -48,6 +48,7 @@ const SearchBar = () => {
     }?${searchParams.toString()}`;
     router.push(newPathName);
   };
+
   return (
     <form className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">
